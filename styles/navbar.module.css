@@ -1,0 +1,156 @@
+.navbarSupremeContainer {
+  width: 100%;
+  padding: 0.5rem;
+  position: fixed;
+  z-index: 99999;
+  background-color: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.178);
+  transition: all 0.3s ease; /* Smooth transition effect */
+}
+
+.navbar {
+  display: grid;
+  grid-template-columns: auto auto;
+  height: 4rem;
+  max-width: 70rem;
+  margin: 0 auto;
+}
+
+.container1 {
+  display: flex;
+  align-items: center;
+}
+
+.container1H1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container1H1 > img {
+  width: 40px;
+  height: 40px;
+}
+
+.containerButton {
+  display: grid;
+  position: relative;
+}
+
+.container3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuButton,
+.closeButton,
+.checkBox {
+  display: none;
+}
+
+.container3Navbar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 2rem;
+  align-items: center;
+}
+
+.link {
+  color: rgb(46, 46, 255);
+  font-size: medium;
+  text-transform: uppercase;
+  position: relative;
+  transition: color 0.6s ease; /* Add a transition for color change */
+}
+
+.link.active{
+  line-height: 1.25rem;
+  font-weight: bold;
+  border-bottom: 2px solid rgb(46, 46, 255);
+}
+
+@media only screen and (max-width: 962px) {
+  .navbarSupremeContainer {
+    padding: 0.5rem;
+  }
+  .navbar {
+    grid-template-columns: auto 3rem;
+  }
+
+  .containerButton {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 2rem;
+  }
+  .menuButton,
+  .checkBox {
+    display: block;
+    position: absolute;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .checkBox,
+  .searchCheckBox {
+    opacity: 0;
+    z-index: 999;
+  }
+  .checkBox:checked ~ .container3Navbar {
+    transform: translateY(0);
+  }
+  .checkBox:checked ~ .menuButton {
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+
+  .checkBox:checked ~ .closeButton {
+    display: block;
+    position: absolute;
+    width: 2.5rem;
+    height: 2.5rem;
+    opacity: 100%;
+    transition: all 0.4s ease;
+  }
+
+  .container3Navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    top: 5rem;
+    left: 0;
+    position: fixed;
+    z-index: 99999;
+    background: white;
+    height: -webkit-fill-available;
+    width: 100vw;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    transform: translateY(100%);
+  }
+
+  .link {
+    font-size: large;
+  }
+}
+
+@media only screen and (max-width: 426px) {
+  .navbarSupremeContainer {
+    padding: 0.5rem;
+  }
+  .navbar {
+    grid-template-columns: auto 2.5rem;
+  }
+}
+@media only screen and (max-width: 321px) {
+  .navbar {
+    grid-template-columns: auto 2rem;
+  }
+  .menuButton,
+  .closeButton,
+  .checkBox {
+    width: 2rem;
+    height: 2rem;
+  }
+}
