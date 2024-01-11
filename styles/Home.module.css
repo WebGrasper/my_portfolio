@@ -50,7 +50,19 @@
 .section1Container2 > img {
   width: 22rem;
   height: 20rem;
+  animation: dimensions 3s infinite linear;
 }
+
+@keyframes dimensions {
+  0%{transform: scale(1);}
+  25%{transform: scale(0.97);}
+  50%{transform: scale(1);}
+  75%{transform: scale(1.03);}
+  100%{transform: scale(1);}
+}
+
+
+
 
 .section2 {
   display: flex;
@@ -64,25 +76,30 @@
   padding-left: 1rem;
 }
 
+.section2Item{
+  margin-bottom: 1rem;
+}
+
 .section2Heading {
   font-size: 3rem;
   font-weight: 800;
 }
 
-.section1Container2CompanyHeading {
+.section1Container2Role {
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
-.section1Container2CompanyDate {
+.section1Container2CompanyDate, .section1Container2CompanyName {
   opacity: 75%;
 }
 
-.section1Container2CompanyHeading,
-.section1Container2CompanyDate {
+.section1Container2Role,
+.section1Container2CompanyDate,.section1Container2CompanyName {
   overflow: hidden;
   text-overflow: ellipsis;
+  line-height: 1.5rem;
 }
 
 .section3 {
@@ -245,10 +262,10 @@
 .section2Container{
   padding-left: 0.25rem;
 }
-.section1Container2CompanyHeading{
+.section1Container2Role{
   font-size: 1rem;
 }
-.section1Container2CompanyDate{
+.section1Container2CompanyDate, .section1Container2CompanyName{
   font-size: small;
 }
 /* Decrease width for images at even positions */

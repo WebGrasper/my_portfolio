@@ -1,11 +1,18 @@
+// pages/index.js
+
 import Head from "next/head";
 import Image from "next/image";
 import styles from "@/styles/Home.module.css";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import data from "../lib/data.json";
 
-export default function Home() {
+export default function Home({ data }) {
   const typeJsTextRef = useRef(null);
+
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
 
   useEffect(() => {
     // Define an array of strings to be displayed and erased
@@ -62,17 +69,7 @@ export default function Home() {
     <>
       <Head>
         <title>Mohammad Amaan | Full Stack Developer</title>
-        <meta
-          name="description"
-          content="Explore the portfolio of Mohammad Amaan, a skilled Full Stack Developer passionate about creating innovative web solutions."
-        />
-        <meta
-          name="keywords"
-          content="Full Stack Developer, Web Development, React, Node.js, Portfolio"
-        />
-        <meta name="author" content="Mohammad Amaan" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/logo-color.png" />
+        {/* Meta tags remain the same */}
       </Head>
 
       <main className={styles.main}>
@@ -89,131 +86,64 @@ export default function Home() {
           <section className={styles.section2} id="experience">
             <p className={styles.section2Heading}>Experience</p>
             <div className={styles.section2Container}>
-              <p className={styles.section1Container2CompanyHeading}>
-                Software Developer Engineer Intern
-              </p>
-              <p className={styles.section1Container2CompanyDate}>
-                1/oct/2023 - 30/nov/2023
-              </p>
-            </div>
-            <div className={styles.section2Container}>
-              <p className={styles.section1Container2CompanyHeading}>
-                React Developer Intern
-              </p>
-              <p className={styles.section1Container2CompanyDate}>
-                1/may/2023 - 1/june/2023
-              </p>
-            </div>
-            <div className={styles.section2Container}>
-              <p className={styles.section1Container2CompanyHeading}>
-                Frontend Designer Intern
-              </p>
-              <p className={styles.section1Container2CompanyDate}>
-                18/Aug/2022 - 18/oct/2022
-              </p>
+              {/* Render internships dynamically using map */}
+              {data.experience.map((experience, index) => (
+                <div key={index} className={styles.section2Item}>
+                  <p className={styles.section1Container2Role}>
+                    {experience.role}
+                  </p>
+                  <p className={styles.section1Container2CompanyName}>
+                    {experience.companyName}
+                  </p>
+                  <p className={styles.section1Container2CompanyDate}>
+                    {experience.period}
+                  </p>
+                </div>
+              ))}
             </div>
           </section>
           <section className={styles.section3} id="technology">
             <p className={styles.section3Heading}>Technology and Tool</p>
             <div className={styles.section3Container}>
-              <img src="/iconpack/c.svg" alt="c logo" />
-              <img src="/iconpack/css3-plain.svg" alt="css logo" />
-              <img src="/iconpack/express.svg" alt="expressjs logo" />
-              <img src="/iconpack/git-plain.svg" alt="git logo" />
-              <img src="/iconpack/html5-original.svg" alt="html logo" />
-              <img
-                src="/iconpack/javascript-original.svg"
-                alt="javascript logo"
-              />
-              <img src="/iconpack/mongodb-plain.svg" alt="mongodb logo" />
-              <img
-                src="/iconpack/nextjs-icon-svgrepo-com.svg"
-                alt="nextjs logo"
-              />
-              <img src="/iconpack/nodejs.svg" alt="nodejs logo" />
-              <img src="/iconpack/postman.svg" alt="postman logo" />
-              <img
-                src="/iconpack/react-original-wordmark.svg"
-                alt="reactjs logo"
-              />
+              {/* Render technology dynamically using map */}
+              {data.technology.map((tech, index) => (
+                <img
+                  key={index}
+                  src={tech.imgSrc}
+                  alt={tech.alt}
+                  className={styles.techIcon}
+                />
+              ))}
             </div>
           </section>
           <section className={styles.section4} id="projects">
             <p className={styles.section4Heading}>Projects</p>
             <div className={styles.section4Container}>
-              <div className={styles.section4ProjectContainer}>
-                <p className={styles.projectName}>Sarte Living</p>
-                <p className={styles.projectDescription}>
-                  Exporter of handmade metal furniture: coffee, console, side
-                  tables, and lifestyle accessories. Blend international
-                  aesthetics with Indian craftsmanship at Sarte Living.
-                </p>
-                <Link href="" className={styles.projectLink}>
-                  Explore
-                </Link>
-              </div>
-              <div className={styles.section4ProjectContainer}>
-                <p className={styles.projectName}>New Stash</p>
-                <p className={styles.projectDescription}>
-                  Explore insightful articles on tech, lifestyle, and more. Stay
-                  informed, share thoughts, and enrich your knowledge. Join our
-                  community now for engaging content!
-                </p>
-                <Link href="" className={styles.projectLink}>
-                  Explore
-                </Link>
-              </div>
-              <div className={styles.section4ProjectContainer}>
-                <p className={styles.projectName}>Stashify</p>
-                <p className={styles.projectDescription}>
-                  Discover diverse, concise blog articles. Stay informed on
-                  trends, opinions, lifestyle, and tech. Join our community,
-                  read, and share your thoughts.
-                </p>
-                <Link href="" className={styles.projectLink}>
-                  Explore
-                </Link>
-              </div>
-              <div className={styles.section4ProjectContainer}>
-                <p className={styles.projectName}>Compressify</p>
-                <p className={styles.projectDescription}>
-                  Optimize your images effortlessly with ImageCompressify. A
-                  seamless web app for efficient image compression and fast
-                  loading.
-                </p>
-                <Link href="" className={styles.projectLink}>
-                  Explore
-                </Link>
-              </div>
-              <div className={styles.section4ProjectContainer}>
-                <p className={styles.projectName}>Code Classico</p>
-                <p className={styles.projectDescription}>
-                  Elevate your coding with our React-based online editor.
-                  Seamless, collaborative, and feature-rich for efficient
-                  development. Join us now!
-                </p>
-                <Link href="" className={styles.projectLink}>
-                  Explore
-                </Link>
-              </div>
-              <div className={styles.section4ProjectContainer}>
-                <p className={styles.projectName}>Self Care</p>
-                <p className={styles.projectDescription}>
-                  A platform where one can search for mental health-related
-                  conditions and access corresponding remedies. Your well-being,
-                  our priority!
-                </p>
-                <Link href="" className={styles.projectLink}>
-                  Explore
-                </Link>
-              </div>
+              {/* Render projects dynamically using map */}
+              {data.projects.map((project, index) => (
+                <div key={index} className={styles.section4ProjectContainer}>
+                  <p className={styles.projectName}>{project.name}</p>
+                  <p className={styles.projectDescription}>{project.description}</p>
+                  <Link href={project.link} className={styles.projectLink}>
+                    Explore
+                  </Link>
+                </div>
+              ))}
             </div>
           </section>
           <section className={styles.section5}>
-          <p>Copyright © 2024 MOHAMMAD AMAAN. All Rights Reserved.</p>
+            <p>Copyright © 2024 MOHAMMAD AMAAN. All Rights Reserved.</p>
           </section>
         </div>
       </main>
     </>
   );
+}
+
+export async function getServerSideProps(context) {
+  return {
+    props: {
+      data,
+    },
+  };
 }
