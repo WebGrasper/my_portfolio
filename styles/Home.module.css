@@ -7,10 +7,11 @@
   padding: 1rem;
 }
 
-.subMain{
+.subMain {
   max-width: 70rem;
 }
 
+.section1,
 .section2,
 .section3 {
   height: 100vh;
@@ -54,15 +55,22 @@
 }
 
 @keyframes dimensions {
-  0%{transform: scale(1);}
-  25%{transform: scale(0.97);}
-  50%{transform: scale(1);}
-  75%{transform: scale(1.03);}
-  100%{transform: scale(1);}
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(0.97);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
-
-
-
 
 .section2 {
   display: flex;
@@ -76,7 +84,7 @@
   padding-left: 1rem;
 }
 
-.section2Item{
+.section2Item {
   margin-bottom: 1rem;
 }
 
@@ -91,12 +99,14 @@
   margin-bottom: 0.5rem;
 }
 
-.section1Container2CompanyDate, .section1Container2CompanyName {
+.section1Container2CompanyDate,
+.section1Container2CompanyName {
   opacity: 75%;
 }
 
 .section1Container2Role,
-.section1Container2CompanyDate,.section1Container2CompanyName {
+.section1Container2CompanyDate,
+.section1Container2CompanyName {
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: 1.5rem;
@@ -201,87 +211,132 @@
 }
 
 @media only screen and (max-width: 601px) {
-  .section2, .section3, .section4{
+  .section2,
+  .section3,
+  .section4 {
     height: max-content;
   }
-  .section1{
+  .section1 {
     grid-template-columns: auto;
     justify-content: unset;
     row-gap: 3rem;
   }
-  .section2{
+  .section2 {
     row-gap: 2rem;
   }
-  .section3Heading{
+  .section3Heading {
     margin-bottom: 2rem;
   }
-  .section3Container{
+  .section3Container {
     padding: 0;
   }
-  .section4Container{
+  .section4Container {
     grid-template-columns: auto auto;
   }
 }
 
 @media only screen and (max-width: 426px) {
-  .name{
-    font-size: medium;
+  .section1,
+  .section2,
+  .section3 {
+    height: auto;
   }
-  .section4Container{
-    grid-template-columns: auto;
+  .section1Container1 {
+    font-size: 1rem;
   }
-  .section5{
-    font-size: 0.75rem;
+  .animatedText {
+    font-size: 1.5rem;
   }
-}
-
-@media only screen and (max-width: 376px) {
-  .section3Container{
+  .section1Container2 > img {
+    width: 14rem;
+    height: 14rem;
+  }
+  .section2Heading,
+  .section3Heading,
+  .section4Heading {
+    font-size: 2rem;
+  }
+  .section2Container {
+    padding-left: 0.25rem;
+  }
+  .section1Container2Role {
+    font-size: 1rem;
+  }
+  .section1Container2CompanyDate,
+  .section1Container2CompanyName {
+    font-size: small;
+  }
+  /* Decrease width for images at even positions */
+  .section3Container {
     column-gap: 2rem;
     row-gap: 3rem;
   }
-  .section5{
+
+  .section3Container > img:nth-child(2n) {
+    width: 50px; /* Adjust the width as needed */
+  }
+
+  /* Set width for images at odd positions */
+  .section3Container > img:nth-child(2n + 1) {
+    width: 35px; /* Adjust the width as needed */
+  }
+  
+  .section4Container {
+    padding: 1.5rem 0.5rem;
+  }
+  .section5 {
+    font-size: 0.5rem;
+  }
+  .name {
+    font-size: medium;
+  }
+  .section4Container {
+    grid-template-columns: auto;
+  }
+  .section5 {
     font-size: 0.65rem;
   }
 }
 
-@media only screen and (max-width: 321px) {
-  .section1Container1{
-    font-size: 1rem;
+@media only screen and (max-width: 363px) {
+  .section5{
+    font-size: 0.5rem;
   }
-  .animatedText{
-    font-size: 1.5rem;
-  }
-  .section1Container2> img {
-    width: 14rem;
-    height: 14rem;
-}
-.section2Heading, .section3Heading, .section4Heading{
-  font-size: 2rem;
-}
-.section2Container{
-  padding-left: 0.25rem;
-}
-.section1Container2Role{
-  font-size: 1rem;
-}
-.section1Container2CompanyDate, .section1Container2CompanyName{
-  font-size: small;
-}
-/* Decrease width for images at even positions */
-.section3Container > img:nth-child(2n) {
-  width: 50px; /* Adjust the width as needed */
 }
 
-/* Set width for images at odd positions */
-.section3Container > img:nth-child(2n + 1) {
-  width: 35px; /* Adjust the width as needed */
-  
-}
-.section4Container{
-  padding: 1.5rem 0.5rem;
-}
-.section5{
-  font-size: 0.5rem;
-}
+@media only screen and (max-width: 310px) {
+  .section1Container2Role{
+    font-size: 0.75rem;
+  }
+  .section1Container2CompanyDate, .section1Container2CompanyName{
+    font-size: 0.65rem;
+    line-height: 1.25rem;
+  }
+  .section2Heading,
+  .section3Heading,
+  .section4Heading {
+    font-size: 1.4rem;
+  }
+  .section3Container > img:nth-child(2n) {
+    width: 36px; /* Adjust the width as needed */
+  }
+
+  /* Set width for images at odd positions */
+  .section3Container > img:nth-child(2n + 1) {
+    width: 26px; /* Adjust the width as needed */
+  }
+
+  .projectName{
+    font-size: 1rem;
+  }
+  .projectDescription{
+    font-size: 0.65rem;
+  }
+  .projectLink{
+    padding: 0.35rem;
+    font-size: 0.65rem;
+  }
+  .section5{
+    font-size: 0.4rem;
+  }
 }
