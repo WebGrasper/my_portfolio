@@ -1,9 +1,8 @@
 // pages/index.js
 
 import Head from "next/head";
-import Image from "next/image";
 import styles from "@/styles/Home.module.css";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import data from "../lib/data.json";
 
@@ -65,6 +64,17 @@ export default function Home({ data }) {
     return () => clearInterval(intervalId); // Clear the interval on component unmount
   }, []);
 
+
+  // (Start) State to track the expanded project
+  
+  const [expandedProject, setExpandedProject] = useState(0);
+
+  const handleProjectClick = (index) => {
+    setExpandedProject((prev) => (prev === index ? null : index));
+  }
+
+  // (End) State to track the expanded project
+
   return (
     <>
       <Head>
@@ -79,14 +89,12 @@ export default function Home({ data }) {
               <p className={styles.name}>Hi, I'm Mohammad Amaan</p>
               <p className={styles.animatedText} ref={typeJsTextRef}></p>
             </div>
-            <div className={styles.section1Container2}>
-              <Image src="/front.svg" width={250} height={250} />
-            </div>
           </section>
           <section className={styles.section2} id="experience">
-            <p className={styles.section2Heading}>Experience</p>
-            <div className={styles.section2Container}>
-              {/* Render internships dynamically using map */}
+            <p className={styles.section2Heading}>
+              <span>Experience</span>
+            </p>
+            <span className={styles.section2Container}>
               {data.experience.map((experience, index) => (
                 <div key={index} className={styles.section2Item}>
                   <p className={styles.section1Container2Role}>
@@ -100,12 +108,13 @@ export default function Home({ data }) {
                   </p>
                 </div>
               ))}
-            </div>
+            </span>
           </section>
           <section className={styles.section3} id="technology">
-            <p className={styles.section3Heading}>Technology and Tool</p>
+            <p className={styles.section3Heading}>
+              <span>Technology and Tool</span>
+            </p>
             <div className={styles.section3Container}>
-              {/* Render technology dynamically using map */}
               {data.technology.map((tech, index) => (
                 <img
                   key={index}
@@ -117,15 +126,24 @@ export default function Home({ data }) {
             </div>
           </section>
           <section className={styles.section4} id="projects">
-            <p className={styles.section4Heading}>Projects</p>
+            <p className={styles.section4Heading}>
+              <span>Projects</span>
+            </p>
             <div className={styles.section4Container}>
-              {/* Render projects dynamically using map */}
               {data.projects.map((project, index) => (
-                <div key={index} className={styles.section4ProjectContainer}>
+                <div
+                  key={index}
+                  className={`${styles.section4ProjectContainer} ${
+                    expandedProject === index ? styles.expanded : ""
+                  }`}
+                  onClick={() => handleProjectClick(index)}
+                >
                   <p className={styles.projectName}>{project.name}</p>
-                  <p className={styles.projectDescription}>{project.description}</p>
+                  <p className={styles.projectDescription}>
+                    {project.description}
+                  </p>
                   <Link href={project.link} className={styles.projectLink}>
-                    Explore
+                    <img src="/right_arrow.svg" alt="right arrow icon" />
                   </Link>
                 </div>
               ))}

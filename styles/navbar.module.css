@@ -3,8 +3,7 @@
   padding: 0.5rem;
   position: fixed;
   z-index: 99999;
-  background-color: white;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.178);
+  background-color: black;
   transition: all 0.3s ease; /* Smooth transition effect */
 }
 
@@ -57,18 +56,18 @@
 }
 
 .link {
-  color: rgb(46, 46, 255);
+  color: white;
   font-size: medium;
   text-transform: uppercase;
   position: relative;
   transition: color 0.6s ease; /* Add a transition for color change */
 }
 
-.link.active{
+/* .link.active{
   line-height: 1.25rem;
   font-weight: bold;
-  border-bottom: 2px solid rgb(46, 46, 255);
-}
+  border-bottom: 2px solid white;
+} */
 
 @media only screen and (max-width: 962px) {
   .navbarSupremeContainer {
@@ -122,7 +121,7 @@
     left: 0;
     position: fixed;
     z-index: 99999;
-    background: white;
+    background: black;
     height: -webkit-fill-available;
     width: 100vw;
     overflow: hidden;

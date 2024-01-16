@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Nova+Square&family=Roboto+Mono&family=Source+Sans+3&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Pixelify+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tektur&display=swap');
+
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -11,7 +16,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(46, 46, 255); /* color of the thumb */
+  background-color: white; /* color of the thumb */
   border-radius: 100px; /* roundness of the thumb */
   cursor: pointer;
 }
@@ -34,9 +39,10 @@ html {
 
 html,
 body {
-  background-color: white;
+  background-color: black;
   max-width: 100vw;
-  font-family: 'Roboto Mono';
+  letter-spacing: 1px;
+  font-family: 'Tektur';
   scroll-behavior: smooth;
 }
 
