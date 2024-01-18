@@ -24,9 +24,23 @@
   /* padding: 6rem 0 1rem 0; */
 }
 
+/* (start) animation in section 1 text */
 .name {
   color: white;
   font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  opacity: 1;
+  animation: scroll-text-fadeInOut linear forwards;
+  animation-timeline: view(y);
+}
+
+@keyframes scroll-text-fadeInOut {
+  60% {
+    opacity: 1;
+  }
+  65%,100% {
+    opacity: 0;
+  }
 }
 
 .animatedText {
@@ -34,11 +48,24 @@
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 800;
   height: 5rem;
   letter-spacing: 0;
+  animation: scroll-text-scaleUp linear forwards;
+  animation-timeline: view(y);
 }
+
+@keyframes scroll-text-scaleUp {
+  50% {
+    transform: scale(1);
+  }
+  60%,100% {
+    transform: scale(1.2);
+  }
+}
+
+/* (end) animation in section 1 text */
 
 .section1Container1 {
   display: flex;
@@ -262,9 +289,9 @@
   transition: all 0.6s ease;
 }
 
-.section4ProjectContainer:not(.expanded) .projectDescription{
+.section4ProjectContainer:not(.expanded) .projectDescription {
   color: transparent;
-} 
+}
 
 /* (end)  animation on section 4 */
 
@@ -350,6 +377,16 @@
   .animatedText {
     font-size: 1.5rem;
   }
+
+  @keyframes scroll-text-scaleUp {
+    40% {
+      transform: scale(1);
+    }
+    60%,100% {
+      transform: scale(1.4);
+    }
+  }
+
   .section2Heading,
   .section3Heading,
   .section4Heading {
@@ -429,6 +466,18 @@
     width: 100%;
     filter: blur(0);
   }
+  .section4ProjectContainer:not(.expanded) {
+    background: black;
+    backdrop-filter: blur(0);
+    -webkit-backdrop-filter: blur(0);
+    border-radius: 6px;
+    border: 1px solid white;
+  }
+
+  .section4ProjectContainer.expanded .projectDescription,
+  .section4ProjectContainer:not(.expanded) .projectDescription {
+    color: white;
+  }
 
   .section5 {
     font-size: 0.5rem;
@@ -445,9 +494,31 @@
   .section5 {
     font-size: 0.5rem;
   }
+  @keyframes scroll-text-scaleUp {
+    40% {
+      transform: scale(1);
+    }
+    60%,100% {
+      transform: scale(1.25);
+    }
+  }
 }
 
 @media only screen and (max-width: 310px) {
+  .name{
+    font-size: 0.65rem;
+  }
+  .animatedText{
+    font-size: 1rem;
+  }
+  @keyframes scroll-text-scaleUp {
+    45% {
+      transform: scale(1);
+    }
+    50%,100% {
+      transform: scale(1.4);
+    }
+  }
   .section1Container2Role {
     font-size: 0.75rem;
   }

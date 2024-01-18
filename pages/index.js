@@ -70,7 +70,7 @@ export default function Home({ data }) {
   const [expandedProject, setExpandedProject] = useState(0);
 
   const handleProjectClick = (index) => {
-    setExpandedProject((prev) => (prev === index ? null : index));
+    setExpandedProject((prev) => (prev === index ? index : index));
   }
 
   // (End) State to track the expanded project
