@@ -142,7 +142,7 @@ export default function Home({ data }) {
                   <p className={styles.projectDescription}>
                     {project.description}
                   </p>
-                  <Link href={project.link} className={styles.projectLink}>
+                  <Link href={project.link} className={styles.projectLink} target="_blank" passHref>
                     <img src="/right_arrow.svg" alt="right arrow icon" />
                   </Link>
                 </div>

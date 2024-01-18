@@ -33,32 +33,32 @@
     {
       "name": "Sarte Living",
       "description": "Exporter of handmade metal furniture: coffee, console, side tables, and lifestyle accessories. Blend international aesthetics with Indian craftsmanship at Sarte Living.",
-      "link": "#"
+      "link": "https://sarteliving.com/"
     },
     {
       "name": "New Stash",
       "description": "Explore insightful articles on tech, lifestyle, and more. Stay informed, share thoughts, and enrich your knowledge. Join our community now for engaging content!",
-      "link": "#"
+      "link": "https://newstash.vercel.app/"
     },
     {
       "name": "Stashify",
       "description": "Discover diverse, concise blog articles. Stay informed on trends, opinions, lifestyle, and tech. Join our community, read, and share your thoughts.",
-      "link": "#"
+      "link": "https://seeblogs.vercel.app/"
     },
     {
       "name": "Compressify",
       "description": "Optimize your images effortlessly with ImageCompressify. A seamless web app for efficient image compression and fast loading.",
-      "link": "#"
+      "link": "https://codesandbox.io/p/github/mohdamaan570/image-compression-clientside-reactjs/main"
     },
     {
       "name": "Code Classico",
       "description": "Elevate your coding with our React-based online editor. Seamless, collaborative, and feature-rich for efficient development. Join us now!",
-      "link": "#"
+      "link": "https://code-editor-murex.vercel.app/"
     },
     {
-      "name": "Self Care",
+      "name": "Self Care [Desktop only]",
       "description": "A platform where one can search for mental health-related conditions and access corresponding remedies. Your well-being, our priority!",
-      "link": "#"
+      "link": "https://mohdamaan570.github.io/Self-Care/"
     }
   ]
 }
